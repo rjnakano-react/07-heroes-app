@@ -1,14 +1,20 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { NavbarItem } from './NavbarItem';
 
 
 export const Navbar = () => {
 
+    const navigate = useNavigate();
 
+    const handleLogout = () => {
+        navigate('/login',
+            {
+                replace: true
+            });
+    };
     const links = [
-        { name: 'Marvel', url: '/marvel' },
-        { name: 'DC', url: '/dc' },
-        // { name: 'Logout', url: '/login' },
+        { name: 'Marvel', url: 'marvel' },
+        { name: 'DC', url: 'dc' },
     ];
 
     return (
@@ -33,13 +39,13 @@ export const Navbar = () => {
                     }
                 </ul>
             </div>
-            
+
             <div className='navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end'>
                 <ul className='navbar-nav ml-auto'>
                     <span className='nav-item nav-link text-primary'>
                         Ryuma
                     </span>
-                    <button className='nav-item nav-link btn'>
+                    <button className='nav-item nav-link btn' onClick={handleLogout}>
                         Logout
                     </button>
                 </ul>
