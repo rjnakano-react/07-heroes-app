@@ -6,6 +6,10 @@ export const Navbar = () => {
 
     const navigate = useNavigate();
 
+    const handleReturn = () => {
+        navigate(-1)
+    }
+
     const handleLogout = () => {
         navigate('/login',
             {
@@ -19,13 +23,13 @@ export const Navbar = () => {
     ];
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-black p-2">
 
             <Link
                 className="navbar-brand"
                 to="/"
             >
-                Asociaciones
+                Comics
             </Link>
 
             <div className="collapse navbar-collapse" id="navbarNav">
@@ -43,6 +47,9 @@ export const Navbar = () => {
 
             <div className='navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end'>
                 <ul className='navbar-nav ml-auto'>
+                    <button className='nav-item nav-link btn' onClick={handleReturn}>
+                        Back
+                    </button>
                     <span className='nav-item nav-link text-primary'>
                         Ryuma
                     </span>
