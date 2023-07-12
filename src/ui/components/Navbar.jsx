@@ -15,6 +15,7 @@ export const Navbar = () => {
     const links = [
         { name: 'Marvel', url: 'marvel' },
         { name: 'DC', url: 'dc' },
+        { name: 'Search', url: 'search' },
     ];
 
     return (
