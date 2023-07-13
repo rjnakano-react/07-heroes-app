@@ -8,13 +8,14 @@ export const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const {user} = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     const handleReturn = () => {
         navigate(-1)
     }
 
     const handleLogout = () => {
+        logout();
         navigate('/login',
             {
                 replace: true
